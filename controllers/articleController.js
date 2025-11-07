@@ -90,6 +90,7 @@ const updateArticle = async (req, res, next) => {
         });
     }
 
+    
     try {
         const article = await newsModel.findById(id);
         if(!article) {
@@ -147,7 +148,6 @@ const deleteArticle = async (req, res, next) => {
     }
 };
 
-
 module.exports = {
     allArticle,
     addArticlePage,
@@ -156,4 +156,3 @@ module.exports = {
     updateArticle,
     deleteArticle
 }
-
