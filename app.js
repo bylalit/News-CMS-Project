@@ -9,7 +9,6 @@ const flash = require('connect-flash');
 const compression = require('compression')
 require('dotenv').config();
 
-
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -38,6 +37,7 @@ app.use(minifyHTML({
 // view engine setup
 app.set('view engine', 'ejs');
 
+
 // Database connection
 mongoose.connect(process.env.MONGODB_URI)
 .then(() => {
@@ -45,6 +45,7 @@ mongoose.connect(process.env.MONGODB_URI)
 }).catch((err) => {
     console.log(err);
 });
+
 
 // Routes
 
@@ -61,3 +62,4 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+
